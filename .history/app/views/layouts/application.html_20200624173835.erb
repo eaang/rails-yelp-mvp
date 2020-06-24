@@ -21,10 +21,12 @@
             Categories
           </a>
           <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
-            <% categories = %w[chinese italian japanese french belgian] %>
-            <% categories.each do |category| %>
-              <%= link_to category.capitalize, restaurants_path(type: category), class: "dropdown-item" %>
-            <% end %>
+            <%= link_to "Chinese", categorys_path, class: "dropdown-item" %>
+            <a class="dropdown-item" href="#">Chinese</a>
+            <a class="dropdown-item" href="#">Italian</a>
+            <a class="dropdown-item" href="#">Japanese</a>
+            <a class="dropdown-item" href="#">French</a>
+            <a class="dropdown-item" href="#">Belgian</a>
           </div>
         </div>
       </div>

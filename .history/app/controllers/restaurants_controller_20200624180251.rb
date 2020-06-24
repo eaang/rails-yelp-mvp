@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
     if params.has_key?(:type)
       @restaurants = Restaurant.where(category: params[:type])
     else
-      @restaurants = Restaurant.all
+      @restaurant = Restaurant.all
     end
     @restaurants = @restaurants.sort_by(&:name)
   end

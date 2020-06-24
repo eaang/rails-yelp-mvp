@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    if params.has_key?(:type)
+    if params[:type].blank?
       @restaurants = Restaurant.where(category: params[:type])
     else
       @restaurants = Restaurant.all

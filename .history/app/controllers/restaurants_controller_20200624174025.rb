@@ -1,10 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    if params.has_key?(:type)
-      @restaurants = Restaurant.where(category: params[:type])
-    else
-      @restaurants = Restaurant.all
-    end
+    @restaurants = Restaurant.all
     @restaurants = @restaurants.sort_by(&:name)
   end
 
@@ -29,6 +25,9 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def category
+    @restaurants = Restaurant.where(category: type)
+  end
 
   private
 
