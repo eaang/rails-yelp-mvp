@@ -13,18 +13,14 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    if @restaurant.valid?
-      @restaurant.save
+    @restaurant.save
 
-      redirect_to @restaurant
-    else
-      render :new
-    end
+    redirect_to restaurants_path
   end
 
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
+    params.require(:restaurant)
   end
 end

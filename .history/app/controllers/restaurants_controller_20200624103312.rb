@@ -18,7 +18,7 @@ class RestaurantsController < ApplicationController
 
       redirect_to @restaurant
     else
-      render :new
+      redirect_to new_path
     end
   end
 

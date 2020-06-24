@@ -1,14 +1,6 @@
-class RestaurantsController < ApplicationController
-  def index
-    @restaurants = Restaurant.all
-  end
-
-  def show
-    @restaurant = Restaurant.find(params[:id])
-  end
-
+class ReviewsController < ApplicationController
   def new
-    @restaurant = Restaurant.new
+    @review = Review.new
   end
 
   def create

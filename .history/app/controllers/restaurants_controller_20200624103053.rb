@@ -13,13 +13,9 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    if @restaurant.valid?
-      @restaurant.save
+    @restaurant.save
 
-      redirect_to @restaurant
-    else
-      render :new
-    end
+    redirect_to @restaurant
   end
 
   private

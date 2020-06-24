@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do
   name = Faker::Restaurant.name
-  category = %w[chinese italian japanese french belgian].sample
+  category = %w[chinese italian japanese french belgian].shuffle[0]
   Restaurant.create(name: name, category: category)
 end
