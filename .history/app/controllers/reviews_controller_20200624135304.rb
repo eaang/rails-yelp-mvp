@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   def create
-    @review = Review.new(review_params)
     find_restaurant
     @review.restaurant = @restaurant
     if @review.valid?

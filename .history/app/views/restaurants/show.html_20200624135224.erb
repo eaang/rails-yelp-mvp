@@ -18,15 +18,16 @@
 <p><%= @restaurant.category.capitalize %></p>
 </div>
 <hr>
-<div class="restaurant-review">
+<div class="restaurant d-flex justify-content-between">
 <h2>Review this restaurant</h2>
-<%= simple_form_for [@restaurant, @review] do |f| %>
+<div class="restaurant-review">
+<%= simple_form_for @review do |f| %>
   <%= f.input :rating, collection: 0..5, prompt: 'Rate the restaurant' %>
   <%= f.input :content, as: :text, placeholder: 'Write a short review here' %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
 </div>
-<hr>
+</div>
 <div>
 <% @reviews.each do |review| %>
 <div class="review d-flex flex-column">
