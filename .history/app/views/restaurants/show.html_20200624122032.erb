@@ -1,0 +1,10 @@
+<div class="headline d-flex justify-content-between align-items-center">
+  <h1><%= @restaurant.name %></h1>
+  <p class="h2">
+    <%= link_to '✏️', edit_restaurant_path(@restaurant), :class => "text-decoration-none" %>
+    <%= link_to "🗑️", restaurant_path(@restaurant), method: :delete,
+    data: { confirm: "Are you sure?" }, :class => "text-decoration-none" %>
+  </p>
+</div>
+<hr>
+<p><%= @restaurant.content %></p>

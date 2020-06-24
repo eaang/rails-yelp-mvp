@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>RailsYelpMvp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
+  </head>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+      <a class="navbar-brand" href=<%= restaurants_path %>>Restaurants</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav dropright">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Chinese</a>
+            <a class="dropdown-item" href="#">Italian</a>
+            <a class="dropdown-item" href="#">Japanese</a>
+            <a class="dropdown-item" href="#">French</a>
+            <a class="dropdown-item" href="#">Belgian</a>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-success" type="button">New Restaurant</button>
+    </nav>
+    <div class="container text-muted">
+      <%= yield %>
+    </div>
+  </body>
+</html>

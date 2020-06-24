@@ -1,0 +1,7 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name, as: :string, placeholder: 'Restaurant Name' %>
+  <%= f.input :address, as: :text  %>
+  <%= f.input :phone_number, as: :tel %>
+  <%= f.input :category, collection: %w[chinese italian japanese french belgian].sort.map { |cat| cat.capitalize } %>
+  <%= f.button :submit %>
+<% end %>

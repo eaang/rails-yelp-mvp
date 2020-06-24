@@ -1,0 +1,21 @@
+<div class="headline d-flex justify-content-between align-items-center">
+  <h1><%= @restaurant.name %></h1>
+</div>
+<hr>
+<div>
+<h2>Restaurant Info</h2>
+<p>Rating: <%= @restaurant.average_rating %> stars</p>
+<p>Address: <%= @restaurant.address %></p>
+<p>Phone Number: <%= @restaurant.phone_number %></p>
+<p>Category: <%= @restaurant.category.capitalize %></p>
+</div>
+<hr>
+<h2>Restaurant Reviews</h2>
+<div>
+<% @reviews.each do |review| %>
+<div class="review d-flex flex-column">
+<div class="review-rating align-self-end">Rating: <%= review.rating %> stars</div>
+<div class="review-content">Review: <%= review.content %></div>
+</div>
+<% end %>
+</div>

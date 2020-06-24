@@ -1,0 +1,14 @@
+<div class="d-flex flex-column">
+  <% @restaurants.each do |restaurant| %>
+    <div class="restaurant d-flex justify-content-between">
+      <div class="restaurant-info">
+        <h2><%= link_to restaurant.name, restaurant %></h2>
+        <p><%= restaurant.category %></p>
+      </div>
+      <div class="restaurant-rating align-self-center">
+        <p><%= restaurant.average_rating %> stars</p>
+      </div>
+    </div>
+    <hr class="bg-light">
+  <% end %>
+</div>

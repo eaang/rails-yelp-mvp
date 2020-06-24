@@ -1,0 +1,34 @@
+<div class="headline d-flex justify-content-between align-items-center">
+  <h1><%= @restaurant.name %></h1>
+</div>
+<hr>
+<div>
+<h2>Info</h2>
+<h4>Rating:</h4>
+  <% if restaurant.average_rating.nan? %>
+    <p>No reviews yet!</p>
+  <% else %>
+    <p> <%= restaurant.average_rating %> Stars</p>
+  <% end %>
+<h4>Address:</h4> 
+<p><%= @restaurant.address %></p>
+<h4>Phone Number:</h4> 
+<p><%= @restaurant.phone_number %></p>
+<h4>Category:</h4> 
+<p><%= @restaurant.category.capitalize %></p>
+</div>
+<hr>
+<div class="restaurant d-flex justify-content-between">
+<h2>Reviews</h2>
+<div class="restaurant-review-button">
+<a class="btn btn-primary" type="button" href=<%= new_restaurant_review_path(@restaurant) %>>Review Restaurant</a>
+</div>
+</div>
+<div>
+<% @reviews.each do |review| %>
+<div class="review d-flex flex-column">
+<div class="review-rating align-self-end"><%= review.rating %> stars</div>
+<div class="review-content"><%= review.content %></div>
+</div>
+<% end %>
+</div>

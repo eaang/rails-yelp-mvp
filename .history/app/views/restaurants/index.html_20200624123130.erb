@@ -1,0 +1,8 @@
+<div class="d-flex flex-column">
+<% @restaurants.each do |restaurant| %>
+<div class="restaurant">
+  <h2><%= link_to restaurant.name, restaurant %></h2>
+  <p><%= restaurant.category %> | <%= restaurant.average_rating %> stars</p>
+</div>
+<% end %>
+</div>

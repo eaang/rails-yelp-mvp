@@ -1,0 +1,16 @@
+<div class="d-flex flex-column">
+  <% @restaurants.each do |restaurant| %>
+    <div class="restaurant d-flex justify-content-between">
+      <div class="restaurant-info">
+        <h2><%= link_to restaurant.name, restaurant %></h2>
+        <p><%= restaurant.category %></p>
+      </div>
+      <div class="restaurant-rating align-self-center">
+        <% if restaurant.average_rating.nan? %>
+          <p>No reviews yet!</p>
+        <% else %>
+          <p> <%= restaurant.average_rating%> Stars</p>
+      </div>
+    </div>
+  <% end %>
+</div>

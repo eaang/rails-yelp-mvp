@@ -1,0 +1,8 @@
+<h1>Submit a review for <%= @restaurant.name %></h1>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :name, as: :string, placeholder: 'Name' %>
+  <%= f.input :address, as: :text, placeholder: 'Address'  %>
+  <%= f.input :phone_number, as: :tel, placeholder: 'Phone number' %>
+  <%= f.input :category, collection: %w[chinese italian japanese french belgian].sort.map { |cat| cat.capitalize }, prompt: 'Choose a category' %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,8 @@
+<% @restaurants.each do |restaurant| %>
+  <h2><%= link_to restaurant.name, restaurant %></h2>
+  <p><%= restaurant.category %></p>
+  <% reviews = Review.where(restaurant_id: restaurant.id) %>
+  <% reviews.map { |review| review.rating } %>
+  <% rating = reviews.sum(0.0) / reviews.size %>
+  <%= rating %>
+<% end %>
