@@ -9,7 +9,7 @@ class Restaurant < ApplicationRecord
   def average_rating
     rating = []
     all_reviews.each { |review| rating << review.rating }
-    rating = (rating.sum(0.0) / rating.size).round(1)
+    rating = (rating.sum(0.0) / rating.size).round(2)
   end
 
   def all_reviews
